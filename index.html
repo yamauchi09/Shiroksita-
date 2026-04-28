@@ -1,1 +1,30 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>人工言語辞書</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+</head>
+<body>
+  <div id="app">読み込み中...</div>
+  <script>
+    window.$docsify = {
+      name: '私の人工言語辞書', // 辞書のタイトル
+      repo: '',             // 自分のGitHub URL（空でもOK）
+      loadSidebar: true,    // サイドバーを使用する
+      subMaxLevel: 2,
+      // 検索機能の設定
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '単語を検索...',
+        noData: '見つかりません',
+        depth: 6
+      }
+    }
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+</body>
+</html>
