@@ -5,22 +5,38 @@
   <title>人工言語辞書</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    /* 検索窓をより見やすくするためのカスタムCSS */
+    .search {
+      margin-bottom: 20px;
+    }
+    .search input {
+      background: #f3f3f3 !important;
+      border-radius: 8px !important;
+      padding: 10px !important;
+    }
+    /* サイドバーのフォントサイズ調整 */
+    .sidebar-nav {
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
   <div id="app">読み込み中...</div>
   <script>
     window.$docsify = {
-      name: '私の人工言語辞書', // 辞書のタイトル
-      repo: '',             // 自分のGitHub URL（空でもOK）
-      loadSidebar: true,    // サイドバーを使用する
-      subMaxLevel: 2,
-      // 検索機能の設定
+      name: '私の人工言語辞書',
+      repo: '',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      // 検索設定をより確実に動くように修正
       search: {
-        maxAge: 86400000,
-        paths: 'auto',
-        placeholder: '単語を検索...',
-        noData: '見つかりません',
-        depth: 6
+        maxAge: 86400000, 
+        paths: 'auto', 
+        placeholder: '単語を入力...',
+        noData: '一致する単語がありません',
+        depth: 6,
+        hideOtherSidebarContent: false // サイドバーの他の項目を消さない
       }
     }
   </script>
